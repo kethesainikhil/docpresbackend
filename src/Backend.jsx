@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
-const Home = () => {
+const Backend = () => {
   const [file, setFile] = useState(null);
   const [image, setImage] = useState('');
   const [output, setOutput] = useState('');
@@ -12,7 +12,7 @@ const Home = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const url = 'https://doctorpresbackend.onrender.com/upload';
+    const url = 'https://localhost:3000/upload';
     const formData = new FormData();
     formData.append('image', file); // Ensure 'image' matches the name in multer configuration
 
@@ -46,4 +46,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Backend;
